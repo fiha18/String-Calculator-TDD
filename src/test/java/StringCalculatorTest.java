@@ -29,6 +29,11 @@ public class StringCalculatorTest {
     {
         assertEquals(7,StringCalculator.add("3,4"));
     }
+    @Test
+    void testThreeNumberSeperatedByComma()
+    {
+        assertEquals(6,StringCalculator.add("1,2,3"));
+    }
 }
 
 
