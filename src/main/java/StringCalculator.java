@@ -14,9 +14,17 @@ public class StringCalculator {
             //numbers = numbers.replaceAll("\n",",");
             String divider = ",";
             //numbers.matches("//(.)\n(.*)"
+            if(numbers.startsWith("//"))
+            {
+                divider = Character.toString(numbers.charAt(2));
+                String nums = numbers.substring(4).replaceAll("\n", divider);
+                numbers = "//"+divider+"\n"+ nums;
+              //  System.out.println(numbers);
+            }
             if(Pattern.compile("//.\n.*").matcher(numbers).matches()){
                 divider = Character.toString(numbers.charAt(2));
                 numbers = numbers.substring(4);
+               // System.out.println(numbers);
             }
 
             //numbers = numbers.replaceAll("\n",divider);
