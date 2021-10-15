@@ -30,9 +30,14 @@ public class StringCalculatorTest {
         assertEquals(7,StringCalculator.add("3,4"));
     }
     @Test
-    void testThreeNumberSeperatedByComma()
+    void testThreeNumberSum()
     {
         assertEquals(6,StringCalculator.add("1,2,3"));
+    }
+    @Test
+    void testUnknownNumberSum()
+    {
+        assertEquals(55,StringCalculator.add("1,2,3,4,5,6,7,8,9,10"));
     }
 }
 
