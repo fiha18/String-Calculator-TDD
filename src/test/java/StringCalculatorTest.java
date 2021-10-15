@@ -39,6 +39,11 @@ public class StringCalculatorTest {
     {
         assertEquals(55,StringCalculator.add("1,2,3,4,5,6,7,8,9,10"));
     }
+    @Test
+    void testNewlineCharacterInsteadComma()
+    {
+        assertEquals(6,StringCalculator.add("1\n2,3"));
+    }
 }
 
 

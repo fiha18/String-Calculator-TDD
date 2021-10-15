@@ -1,12 +1,14 @@
 public class StringCalculator {
 
     public static int add(String numbers){
+
         if (numbers.equals(""))
         {   return 0; }
 
         else if (numbers.length() ==1)
             return toInt(numbers);
         else {
+            numbers = numbers.replaceAll("\n",",");
             String numbersList[] = splitNumbers(numbers, ",");
             return sum(numbersList);
         }
