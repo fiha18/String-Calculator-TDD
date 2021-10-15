@@ -21,7 +21,9 @@ public class StringCalculator {
                 numbers = "//"+divider+"\n"+ nums;
               //  System.out.println(numbers);
             }
-
+            else {
+                numbers = numbers.replaceAll("\n",",");
+            }
             if(Pattern.compile("//.\n.*").matcher(numbers).matches()){
                 divider = Character.toString(numbers.charAt(2));
                 numbers = numbers.substring(4);
