@@ -9,8 +9,13 @@ public class StringCalculatorTest {
     }
 
     @Test
-    void testOneNumber()
+    void testOneNumberHardCoded()
     {
         assertEquals(1,StringCalculator.add("1"));
+    }
+    @Test
+    void testOneNumber()
+    {
+        assertEquals(4,StringCalculator.add("4"));
     }
 }
