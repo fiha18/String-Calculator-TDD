@@ -54,6 +54,36 @@ public class StringCalculatorTest {
     {
         assertEquals(6,StringCalculator.add("//-\n1-2\n3"));
     }
+    @Test
+    void testDifferentDelimiterNewLine()
+    {
+        assertEquals(55,StringCalculator.add("//#\n1#2#3#4\n5#6#7\n8#9#10"));
+    }
+
+    @Test
+    void testNegativeNumber()
+    {
+        try
+        {
+            StringCalculator.add("-5,3");
+        }
+        catch (IllegalArgumentException e)
+        {
+            assertEquals(e.getMessage(),"negatives not allowed: -5");
+        }
+    }
+    @Test
+    void testNegativeNumbers()
+    {
+        try
+        {
+            StringCalculator.add("-5,3,2,-4,-6");
+        }
+        catch (IllegalArgumentException e)
+        {
+            assertEquals(e.getMessage(),"negatives not allowed: -5,-4,-6");
+        }
+    }
 }
 
 

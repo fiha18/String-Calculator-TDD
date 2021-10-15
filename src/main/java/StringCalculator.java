@@ -21,6 +21,7 @@ public class StringCalculator {
                 numbers = "//"+divider+"\n"+ nums;
               //  System.out.println(numbers);
             }
+
             if(Pattern.compile("//.\n.*").matcher(numbers).matches()){
                 divider = Character.toString(numbers.charAt(2));
                 numbers = numbers.substring(4);
@@ -45,9 +46,23 @@ public class StringCalculator {
     private static int sum(String[] numbers)
     {
         int totalSum = 0;
+        String negatives = "";
         for (String number: numbers)
         {
+            if(toInt(number) < 0)
+            {
+                if(negatives.equals(""))
+                {
+                    negatives = number;
+                }
+                else
+                    negatives += ("," + number);
+            }
             totalSum += toInt(number);
+        }
+        if(!negatives.equals(""))
+        {
+            throw new IllegalArgumentException("negatives not allowed: "+ negatives);
         }
         return totalSum;
     }
