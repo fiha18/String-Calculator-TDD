@@ -8,8 +8,14 @@ public class StringCalculator {
         else if (numbers.length() ==1)
             return toInt(numbers);
         else {
-            numbers = numbers.replaceAll("\n",",");
-            String numbersList[] = splitNumbers(numbers, ",");
+
+            //numbers = numbers.replaceAll("\n",",");
+            String divider = ",";
+            if(numbers.matches("//(.*)\n(.*)")){
+                divider = Character.toString(numbers.charAt(2));
+                numbers = numbers.substring(4);
+            }
+            String numbersList[] = splitNumbers(numbers,divider);
             return sum(numbersList);
         }
     }
