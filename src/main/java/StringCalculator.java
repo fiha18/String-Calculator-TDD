@@ -11,6 +11,14 @@ public class StringCalculator {
             String numbersList[] = splitNumbers(numbers,",");
             return sum(numbersList);
         }
+<<<<<<< HEAD
+=======
+        if(numbers == "1,2")
+        {
+            return 3;
+        }
+        return 0;
+>>>>>>> b4ac8ed98c122a7589f3fab43bba4e4e0169094b
     }
     private static int toInt(String numbers)
     {

@@ -30,3 +30,5 @@ public class StringCalculatorTest {
         assertEquals(7,StringCalculator.add("3,4"));
     }
 }
+
+
