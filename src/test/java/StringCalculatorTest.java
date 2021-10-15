@@ -18,4 +18,10 @@ public class StringCalculatorTest {
     {
         assertEquals(4,StringCalculator.add("4"));
     }
+
+    @Test
+    void testTwoNumber_OneAndTwo()
+    {
+        assertEquals(3,StringCalculator.add("1,2"));
+    }
 }
