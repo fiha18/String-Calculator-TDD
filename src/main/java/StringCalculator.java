@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 public class StringCalculator {
 
     public static int add(String numbers){
@@ -11,10 +13,13 @@ public class StringCalculator {
 
             //numbers = numbers.replaceAll("\n",",");
             String divider = ",";
-            if(numbers.matches("//(.*)\n(.*)")){
+            //numbers.matches("//(.)\n(.*)"
+            if(Pattern.compile("//.\n.*").matcher(numbers).matches()){
                 divider = Character.toString(numbers.charAt(2));
                 numbers = numbers.substring(4);
             }
+
+            //numbers = numbers.replaceAll("\n",divider);
             String numbersList[] = splitNumbers(numbers,divider);
             return sum(numbersList);
         }

@@ -47,7 +47,12 @@ public class StringCalculatorTest {
     @Test
     void testDifferentDelimiter()
     {
-        assertEquals(3, StringCalculator.add("//;\n1;2"));
+        assertEquals(6, StringCalculator.add("//;\n1;2;3"));
+    }
+    @Test
+    void testDifferentDelimiterwithNewLine()
+    {
+        assertEquals(6,StringCalculator.add("//-\n1-2\n3"));
     }
 }
 
