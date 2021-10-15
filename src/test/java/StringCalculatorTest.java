@@ -4,7 +4,13 @@ import org.junit.jupiter.api.Test;
 public class StringCalculatorTest {
     // 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
     @Test
-    void add_emptyString_returnZero(){
+    void testEmptyString(){
         assertEquals(0,StringCalculator.add(""));
+    }
+
+    @Test
+    void testOneNumber()
+    {
+        assertEquals(1,StringCalculator.add("1"));
     }
 }
