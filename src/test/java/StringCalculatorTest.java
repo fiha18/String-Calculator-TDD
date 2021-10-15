@@ -24,4 +24,66 @@ public class StringCalculatorTest {
     {
         assertEquals(3,StringCalculator.add("1,2"));
     }
+    @Test
+    void testTwoNumber()
+    {
+        assertEquals(7,StringCalculator.add("3,4"));
+    }
+    @Test
+    void testThreeNumberSum()
+    {
+        assertEquals(6,StringCalculator.add("1,2,3"));
+    }
+    @Test
+    void testUnknownNumberSum()
+    {
+        assertEquals(55,StringCalculator.add("1,2,3,4,5,6,7,8,9,10"));
+    }
+    @Test
+    void testNewlineCharacterInsteadComma()
+    {
+        assertEquals(6,StringCalculator.add("1\n2,3"));
+    }
+    @Test
+    void testDifferentDelimiter()
+    {
+        assertEquals(6, StringCalculator.add("//;\n1;2;3"));
+    }
+    @Test
+    void testDifferentDelimiterwithNewLine()
+    {
+        assertEquals(6,StringCalculator.add("//-\n1-2\n3"));
+    }
+    @Test
+    void testDifferentDelimiterNewLine()
+    {
+        assertEquals(55,StringCalculator.add("//#\n1#2#3#4\n5#6#7\n8#9#10"));
+    }
+
+    @Test
+    void testNegativeNumber()
+    {
+        try
+        {
+            StringCalculator.add("-5,3");
+        }
+        catch (IllegalArgumentException e)
+        {
+            assertEquals(e.getMessage(),"negatives not allowed: -5");
+        }
+    }
+    @Test
+    void testNegativeNumbers()
+    {
+        try
+        {
+            StringCalculator.add("-5,3,2,-4,-6");
+        }
+        catch (IllegalArgumentException e)
+        {
+            assertEquals(e.getMessage(),"negatives not allowed: -5,-4,-6");
+        }
+    }
 }
+
+
